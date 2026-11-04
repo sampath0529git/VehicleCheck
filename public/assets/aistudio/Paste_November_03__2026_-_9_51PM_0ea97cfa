@@ -1,0 +1,1078 @@
+# COMPLETE MASTER PROMPT – UK VEHICLE INSURANCE CHECKER
+
+## 1. YOUR ROLE
+
+Act as an expert:
+
+- Senior Next.js Full-Stack Developer
+- SaaS UI/UX Designer
+- Technical SEO Specialist
+- UK Automotive Insurance Content Specialist
+- Web Performance Engineer
+- Accessibility Specialist
+
+Your task is to build a complete, production-ready, SEO-focused UK Vehicle Insurance Checker website.
+
+Do not just create a homepage mockup. Build the actual functional application with all requested pages, components, interactions, and technical SEO requirements.
+
+---
+
+# 2. PROJECT OVERVIEW
+
+Project name: VehicleCheck
+
+Target country: United Kingdom
+
+Target language: British English
+
+Main website purpose:
+
+Help UK vehicle owners understand how to check whether their car is insured using their vehicle registration number and direct them to the official Motor Insurers' Bureau (MIB) checking service.
+
+Business model:
+
+- Free-to-use vehicle insurance checker.
+- Organic Google traffic.
+- Google AdSense monetisation potential.
+- Future insurance affiliate opportunities where appropriate.
+
+Development budget: £0 initially.
+
+Domain configuration:
+
+Keep the website domain configurable. Do not hardcode an unconfirmed domain throughout the project.
+
+Recommended domain:
+CarInsuranceCheck.co.uk
+
+Primary SEO objective:
+
+Rank for relevant UK vehicle insurance checking searches by providing a useful, transparent, fast, and trustworthy web experience.
+
+IMPORTANT:
+
+This website is an independent information and navigation tool. It is NOT owned, operated, endorsed, or officially affiliated with MIB, DVLA, the UK Government, First Alternative, or any insurance company.
+
+---
+
+# 3. SEMRUSH KEYWORD RESEARCH – UNITED KINGDOM
+
+Use the following keyword research data supplied from Semrush Keyword Magic Tool.
+
+All volumes and difficulty figures are from the user's UK database screenshot.
+
+## Primary keyword
+
+Keyword: check if car is insured
+Search volume: 27,100
+Keyword difficulty: 19%
+
+This is the main homepage keyword.
+
+## Secondary keywords
+
+| Keyword | Volume | KD |
+|---|---:|---:|
+| is my car insured check free dvla | 18,100 | 29 |
+| check if a car is insured | 12,100 | 28 |
+| check insurance on car | 9,900 | 29 |
+
+## Additional target keywords
+
+| Keyword | Volume | KD |
+|---|---:|---:|
+| First Alternative Car Insurance | 6,600 | 23 |
+| Classic Car Insurance | 12,100 | 29 |
+
+## SEO strategy
+
+Use the primary keyword on the homepage.
+
+Use secondary keywords naturally in the homepage content, checker instructions, headings, and supporting content.
+
+Create dedicated landing pages for:
+
+1. First Alternative Car Insurance.
+2. Classic Car Insurance.
+
+Do not mix every keyword into the homepage.
+
+Each page must have a distinct search intent and provide genuinely useful information.
+
+Do not create doorway pages, duplicate pages, or keyword-stuffed content.
+
+Do not promise first-page or number-one Google rankings.
+
+---
+
+# 4. TECHNOLOGY STACK
+
+Use the following technologies:
+
+- Next.js with App Router.
+- React.
+- TypeScript.
+- Tailwind CSS.
+- Lucide React icons.
+- Next.js Metadata API.
+- Next.js Image optimisation.
+- Semantic HTML5.
+- CSS transitions for subtle interactions.
+
+Architecture:
+
+- Server Components by default.
+- Client Components only where interaction is required.
+- Reusable components.
+- Clean separation of SEO content, UI, validation, and configuration.
+
+Hosting:
+
+Vercel Hobby plan, subject to its current usage and eligibility rules.
+
+Do not introduce paid APIs, paid databases, paid hosting dependencies, or unnecessary backend infrastructure.
+
+Do not use Firebase, Supabase, or a database for the initial version.
+
+The application must work without a backend.
+
+---
+
+# 5. OFFICIAL INSURANCE CHECK FUNCTIONALITY
+
+This is the most important technical requirement.
+
+The application must NOT pretend to have direct access to the Motor Insurance Database (MID) or Navigate database.
+
+There must be:
+
+- No fake insurance results.
+- No simulated insured/uninsured results.
+- No invented insurance APIs.
+- No fabricated policy details.
+- No fake database connection.
+- No misleading claims of real-time verification.
+
+Official authority:
+
+Motor Insurers' Bureau (MIB).
+
+Official information page:
+
+https://www.mib.org.uk/check-and-stay-insured/check-your-vehicle/
+
+Use this official MIB page as the external destination for the checking process.
+
+Keep the destination URL in one central configuration file so it can be updated later.
+
+Do not invent or assume that the external service accepts registration numbers through URL parameters.
+
+The user must complete the actual insurance check on the official MIB website.
+
+## Official checking rules
+
+Clearly explain:
+
+- The free public service is for checking a vehicle the user owns or has the legal right to drive.
+- Users must follow the official service's terms and conditions.
+- A result showing insured means a live policy exists against that vehicle.
+- It does not guarantee that the policy covers every type of use.
+- Newly purchased or renewed insurance may take several days to appear.
+- If the result appears incorrect, the user should contact their insurer.
+
+Do not suggest that the public checker can be used to investigate any unrelated vehicle.
+
+## User journey
+
+Step 1: User visits the website.
+
+Step 2: User enters a UK vehicle registration number.
+
+Step 3: Application validates the input format.
+
+Step 4: Application displays a confirmation panel.
+
+Step 5: User copies the registration number if necessary.
+
+Step 6: User clicks "Continue to Official MIB Check".
+
+Step 7: Open the official MIB service in a new tab.
+
+Step 8: User completes the actual insurance check on the official website.
+
+---
+
+# 6. BRANDING AND UI/UX DESIGN
+
+Brand name: VehicleCheck
+
+Design direction:
+
+Create a premium, trustworthy, modern automotive SaaS website.
+
+The interface should look like a professional UK vehicle information service.
+
+Avoid a generic AI-generated website appearance.
+
+## Colour palette
+
+Primary Navy: #16324F
+
+Dark Navy: #102A43
+
+Accent Yellow: #F5D547
+
+White: #FFFFFF
+
+Light Background: #F6F8FA
+
+Primary Text: #172B3A
+
+Secondary Text: #65758B
+
+Border: #E4EAF0
+
+Typography:
+
+Use Inter or a similar modern sans-serif font.
+
+## UI principles
+
+- Clean and minimal layout.
+- Strong visual hierarchy.
+- Generous whitespace.
+- Professional vehicle-related visual elements.
+- Consistent border radius.
+- Subtle shadows.
+- High-quality buttons.
+- Consistent spacing.
+- Accessible colour contrast.
+- No unnecessary animations.
+- No excessive gradients.
+- No emojis.
+
+Use Lucide icons consistently.
+
+The result should communicate reliability, simplicity, and transparency.
+
+---
+
+# 7. HOMEPAGE DESIGN
+
+Build a complete homepage with the following sections.
+
+## A. Navigation Header
+
+Logo: VehicleCheck
+
+Navigation:
+
+- Home
+- How It Works
+- Insurance Guide
+- First Alternative
+- Classic Car Insurance
+- FAQ
+
+Include:
+
+- Responsive desktop navigation.
+- Mobile hamburger menu.
+- Accessible navigation controls.
+- Clear active states.
+- Professional logo treatment.
+
+## B. Hero Section
+
+Primary H1:
+
+"Check If Your Car Is Insured"
+
+Supporting text:
+
+"Find out how to check your vehicle's insurance status in the UK using your registration number and the official MIB service."
+
+Create a visually impressive hero section with:
+
+- Main heading.
+- Supporting paragraph.
+- Registration checker card.
+- Trust indicators.
+- Professional automotive image or illustration.
+
+The registration checker must be the main visual focus.
+
+## C. Vehicle Registration Checker
+
+Create a polished, functional registration input component.
+
+Input label:
+
+"Enter your vehicle registration"
+
+Placeholder:
+
+"e.g. AB12 CDE"
+
+Primary button:
+
+"Check Insurance Status"
+
+Functional requirements:
+
+1. Accept UK registration input.
+2. Convert letters to uppercase.
+3. Trim unnecessary whitespace.
+4. Normalise internal spacing for validation.
+5. Support common modern UK registration formats.
+6. Support appropriate older registration formats where practical.
+7. Reject empty input.
+8. Reject obviously invalid characters and malformed entries.
+9. Provide clear validation feedback.
+10. Include a clear input button.
+11. Include a copy registration button.
+12. Use accessible labels and keyboard navigation.
+13. Prevent accidental form submission when invalid.
+
+Do not claim to validate the official DVLA registration database.
+
+Explain that format validation only checks whether the input resembles a valid UK registration.
+
+## D. Confirmation Panel
+
+After successful format validation, show a confirmation panel.
+
+Display:
+
+- "Registration ready".
+- Entered registration.
+- Copy registration button.
+- Clear instructions.
+
+Main CTA:
+
+"Continue to Official MIB Check"
+
+The CTA must open the official MIB destination safely in a new tab.
+
+Use rel="noopener noreferrer".
+
+Display the following notice:
+
+"We do not access live insurance records. Your actual vehicle insurance status is checked through the official MIB service."
+
+Do not show fake insurance status badges or results.
+
+## E. Trust Section
+
+Create three trust cards:
+
+1. Free Official Checking Service.
+2. Simple Registration-Based Process.
+3. No Account Required.
+
+Clearly distinguish the third-party website from the official MIB service.
+
+Do not claim official approval or Government affiliation.
+
+## F. How It Works
+
+Display three attractive steps.
+
+1. Enter Your Registration.
+2. Continue to the Official MIB Service.
+3. View Your Insurance Status.
+
+Include suitable icons and concise explanations.
+
+## G. Insurance Information Section
+
+Create original UK-focused content explaining:
+
+- Why checking vehicle insurance matters.
+- How to verify that a vehicle is showing as insured.
+- What happens when insurance is renewed.
+- What to do when a vehicle shows as uninsured.
+- Why insurance policy documents should be checked.
+- Why an insured database result does not guarantee every type of driving is covered.
+
+## H. UK Insurance and DVLA Information
+
+Explain the difference between:
+
+MIB:
+Maintains the central insurance database used for vehicle insurance checks.
+
+DVLA:
+Provides vehicle information including tax, MOT expiry, registration, and other vehicle details.
+
+Do not claim DVLA provides the public vehicle insurance checker.
+
+Link to the official DVLA vehicle information service:
+
+https://www.gov.uk/get-vehicle-information-from-dvla
+
+Link to the official MIB information service.
+
+## I. FAQ Section
+
+Create an accessible accordion with these questions:
+
+1. How can I check if my car is insured in the UK?
+2. Is it free to check if my car is insured?
+3. Can I check car insurance by registration number?
+4. Can I check another person's vehicle insurance?
+5. How long does it take for new insurance to appear?
+6. What should I do if my car shows as uninsured?
+7. Does an insured result mean I can drive any vehicle?
+8. Can I check my car insurance without an account?
+9. Is VehicleCheck an official MIB website?
+10. What is the difference between DVLA and MIB?
+11. Can I check classic car insurance status?
+12. How do I check my insurance after renewing my policy?
+
+Answers must be factually accurate and written in British English.
+
+## J. Footer
+
+Include:
+
+- Home.
+- How It Works.
+- Insurance Guide.
+- First Alternative Car Insurance.
+- Classic Car Insurance.
+- FAQ.
+- About Us.
+- Contact.
+- Privacy Policy.
+- Disclaimer.
+- Official MIB link.
+
+Include a clear third-party service disclaimer.
+
+---
+
+# 8. ADDITIONAL SEO PAGE: FIRST ALTERNATIVE CAR INSURANCE
+
+Route:
+
+/first-alternative-car-insurance/
+
+Target keyword:
+
+First Alternative Car Insurance
+
+Semrush UK volume: 6,600
+
+Keyword difficulty: 23
+
+Search intent:
+
+Brand-specific insurance information and research.
+
+Create a detailed, original, informative page.
+
+Suggested H1:
+
+"First Alternative Car Insurance – UK Guide"
+
+Content sections:
+
+1. Introduction to First Alternative.
+2. Who provides First Alternative car insurance?
+3. What is First Alternative car insurance?
+4. Policy features and available cover.
+5. Comprehensive car insurance information.
+6. Optional additional cover.
+7. Policy documents and important information.
+8. How to contact First Alternative.
+9. How to check whether a First Alternative insured vehicle appears on MIB.
+10. Frequently asked questions.
+
+Official provider website:
+
+https://www.firstalternative.com/
+
+Useful official resources:
+
+https://www.firstalternative.com/car-insurance
+
+https://www.firstalternative.com/policy_information
+
+https://www.firstalternative.com/policy-faq
+
+https://www.firstalternative.com/legal
+
+IMPORTANT CONTENT RULES:
+
+- Verify current provider information using official sources.
+- Verify the current ownership and regulatory information.
+- Do not assume historical company ownership details remain current.
+- Verify policy availability and quote availability before publishing.
+- Do not invent prices, discounts, policy features, contact numbers, or coverage.
+- Do not present this website as an official First Alternative website.
+- Do not copy the provider's website content.
+- Link to official resources where useful.
+
+If current policy information cannot be verified, explain that users should consult the provider's latest policy documents.
+
+Include an accurate third-party brand disclaimer.
+
+SEO requirements:
+
+Unique title tag.
+
+Suggested title:
+
+"First Alternative Car Insurance UK – Policy Guide"
+
+Write a unique meta description.
+
+Use the keyword naturally in H1, introduction, relevant H2 headings, and page metadata.
+
+Do not keyword-stuff.
+
+---
+
+# 9. ADDITIONAL SEO PAGE: CLASSIC CAR INSURANCE
+
+Route:
+
+/classic-car-insurance/
+
+Target keyword:
+
+Classic Car Insurance
+
+Semrush UK volume: 12,100
+
+Keyword difficulty: 29
+
+Search intent:
+
+Informational and commercial research.
+
+Suggested H1:
+
+"Classic Car Insurance in the UK – Complete Guide"
+
+Create a comprehensive, original UK-focused guide.
+
+Content sections:
+
+1. What Is Classic Car Insurance?
+2. How Does Classic Car Insurance Work?
+3. What Vehicles Qualify as Classic Cars?
+4. Classic Car Insurance Eligibility.
+5. Classic Car Insurance vs Standard Car Insurance.
+6. Limited Mileage Policies.
+7. Agreed Value vs Market Value.
+8. Storage and Security Requirements.
+9. Factors Affecting Classic Car Insurance Costs.
+10. How to Choose Classic Car Insurance.
+11. How to Check If a Classic Car Is Insured.
+12. Frequently Asked Questions.
+
+Explain that eligibility requirements and policy terms vary by insurer.
+
+Do not claim that every vehicle above a particular age automatically qualifies as a classic car.
+
+Do not invent insurance premiums or quotations.
+
+Do not give guaranteed savings claims.
+
+Use reliable sources and cite relevant official or insurer information in the content.
+
+Link naturally to the main VehicleCheck homepage.
+
+SEO title:
+
+"Classic Car Insurance UK – Complete Guide"
+
+Create a unique meta description.
+
+Use relevant keyword variations naturally.
+
+---
+
+# 10. SUPPORTING SEO PAGES
+
+Create the following additional pages.
+
+## How to Check If a Car Is Insured
+
+Route:
+/how-to-check-if-a-car-is-insured/
+
+Target:
+How to check car insurance in the UK.
+
+Include a clear step-by-step guide to the official MIB process.
+
+## Is My Car Insured?
+
+Route:
+/is-my-car-insured/
+
+Target:
+Is my car insured?
+
+Explain how users can check their own vehicle through MIB.
+
+Link to the homepage checker.
+
+## Check Car Insurance by Registration
+
+Route:
+/check-car-insurance-by-registration/
+
+Target:
+Check car insurance by registration.
+
+Explain the UK vehicle registration checking process.
+
+Avoid duplicating the homepage.
+
+## FAQ
+
+Route:
+/faq/
+
+Provide useful expanded questions and answers.
+
+## About Us
+
+Route:
+/about-us/
+
+Explain the purpose of the independent VehicleCheck website.
+
+Do not invent a company registration, office address, team members, or official partnerships.
+
+## Contact
+
+Route:
+/contact/
+
+Provide a simple contact form or clearly displayed contact method.
+
+Do not invent a business email address.
+
+## Privacy Policy
+
+Route:
+/privacy-policy/
+
+Explain the actual data collection and processing behaviour.
+
+Do not claim that analytics, cookies, or advertising trackers are absent if they are implemented.
+
+## Disclaimer
+
+Route:
+/disclaimer/
+
+Clearly explain:
+
+- Independent website status.
+- No official MIB or DVLA affiliation.
+- No direct access to the Motor Insurance Database.
+- No guarantee of insurance coverage.
+- Official external checking process.
+- Information accuracy and update limitations.
+
+---
+
+# 11. SEO IMPLEMENTATION
+
+Use Next.js Metadata API.
+
+Homepage SEO:
+
+Title:
+"Check If Car Is Insured UK – Free Vehicle Checker"
+
+Meta description:
+"Check if your car is insured in the UK. Enter your vehicle registration and continue to the official MIB vehicle insurance checker for free."
+
+H1:
+"Check If Your Car Is Insured"
+
+Primary keyword:
+"check if car is insured"
+
+Implement:
+
+- Unique SEO title for every indexable page.
+- Unique meta descriptions.
+- Canonical URLs.
+- Open Graph metadata.
+- Twitter metadata.
+- XML sitemap.
+- robots.txt.
+- Semantic HTML structure.
+- Breadcrumb navigation.
+- Internal linking.
+- Descriptive image alt text.
+- Appropriate structured data.
+- Clean URLs.
+
+Structured data:
+
+Use accurate WebSite and Organization schema where appropriate.
+
+Use BreadcrumbList schema for suitable pages.
+
+Use FAQPage structured data only when the page meets Google's current eligibility requirements.
+
+Do not use fake ratings, fake reviews, fake business addresses, or misleading Government/insurance provider schema.
+
+Do not add keywords to structured data that are not visible in the actual content.
+
+## Internal linking
+
+Homepage should link to:
+
+- How to Check If a Car Is Insured.
+- Is My Car Insured?
+- Check Car Insurance by Registration.
+- First Alternative Car Insurance.
+- Classic Car Insurance.
+- FAQ.
+
+The supporting pages should link naturally to related guides and the homepage checker.
+
+Avoid excessive internal linking.
+
+---
+
+# 12. CONTENT QUALITY AND E-E-A-T
+
+Write all website content in professional British English.
+
+Content must be:
+
+- Original.
+- Accurate.
+- Easy to understand.
+- Helpful.
+- Well structured.
+- Relevant to UK users.
+- Regularly maintainable.
+
+Use UK terminology:
+
+- Car insurance.
+- Vehicle registration.
+- Number plate.
+- Motor insurance.
+- Motor Insurers' Bureau.
+- Vehicle Registration Number (VRN).
+- Comprehensive cover.
+- Third-party cover.
+
+Include relevant sources when making factual claims.
+
+Prioritise official sources:
+
+- MIB.
+- GOV.UK.
+- DVLA.
+- Official insurance providers.
+- FCA where relevant.
+
+Do not invent authors, qualifications, experts, editorial reviewers, or company credentials.
+
+Add a visible last-reviewed date only when the content has genuinely been reviewed.
+
+---
+
+# 13. MOBILE-FIRST RESPONSIVE DESIGN
+
+The entire application must be mobile-first.
+
+Requirements:
+
+- Fully responsive desktop navigation.
+- Mobile hamburger menu.
+- No horizontal scrolling.
+- Registration input must fit small screens.
+- Buttons must have minimum 44px touch targets.
+- Readable font sizes.
+- Appropriate line spacing.
+- Responsive cards.
+- Properly scaled images.
+- Accessible accordions.
+- Comfortable mobile spacing.
+- Responsive footer.
+- Clear form validation.
+- No overlapping elements.
+
+Test at:
+
+- 320px.
+- 375px.
+- 390px.
+- 430px.
+- 768px.
+- 1024px.
+- 1440px.
+
+The mobile layout must feel intentionally designed, not simply compressed from desktop.
+
+---
+
+# 14. PERFORMANCE AND ACCESSIBILITY
+
+Optimise:
+
+- Core Web Vitals.
+- Largest Contentful Paint.
+- Interaction to Next Paint.
+- Cumulative Layout Shift.
+- Image loading.
+- Font loading.
+- JavaScript bundle size.
+- Component rendering.
+
+Use:
+
+- Next.js Image.
+- Lazy loading for non-critical images.
+- Appropriate image dimensions.
+- Semantic elements.
+- Keyboard-accessible navigation.
+- Visible focus states.
+- Accessible input labels.
+- Screen-reader-friendly error messages.
+- Appropriate colour contrast.
+- Reduced-motion support.
+
+Avoid unnecessary libraries and large animation packages.
+
+---
+
+# 15. PRIVACY AND SECURITY
+
+The registration checker should operate client-side.
+
+Requirements:
+
+- Do not store registration numbers in a database.
+- Do not send registration numbers to our own server.
+- Do not store registration numbers in localStorage.
+- Do not retain registration inputs after the user leaves the page.
+- Do not collect unnecessary personal information.
+- Do not log registration numbers.
+- Use secure external navigation.
+- Implement accurate privacy disclosures.
+
+If analytics or advertising is added in the future, update the privacy and cookie disclosures accordingly.
+
+---
+
+# 16. FREE MONETISATION PREPARATION
+
+Prepare the website for possible future Google AdSense integration.
+
+Do not insert fake advertisements.
+
+Keep advertising areas separate from the checker.
+
+Do not place ads where they could be mistaken for the official MIB button.
+
+Ensure:
+
+- Good content quality.
+- Clear navigation.
+- Privacy policy.
+- Disclaimer.
+- About Us.
+- Contact page.
+- Useful original content.
+- No misleading advertising placements.
+
+Do not guarantee AdSense approval.
+
+Keep the initial website lightweight and free of paid integrations.
+
+---
+
+# 17. PROJECT FILE STRUCTURE
+
+Use a clean, scalable Next.js App Router architecture.
+
+Suggested structure:
+
+app/
+  layout.tsx
+  page.tsx
+  globals.css
+  robots.ts
+  sitemap.ts
+
+  how-to-check-if-a-car-is-insured/
+    page.tsx
+
+  is-my-car-insured/
+    page.tsx
+
+  check-car-insurance-by-registration/
+    page.tsx
+
+  first-alternative-car-insurance/
+    page.tsx
+
+  classic-car-insurance/
+    page.tsx
+
+  faq/
+    page.tsx
+
+  about-us/
+    page.tsx
+
+  contact/
+    page.tsx
+
+  privacy-policy/
+    page.tsx
+
+  disclaimer/
+    page.tsx
+
+components/
+  Header.tsx
+  MobileNavigation.tsx
+  Footer.tsx
+  Hero.tsx
+  VehicleChecker.tsx
+  RegistrationInput.tsx
+  CheckerConfirmation.tsx
+  TrustSection.tsx
+  HowItWorks.tsx
+  InsuranceGuide.tsx
+  FAQAccordion.tsx
+  Breadcrumbs.tsx
+  Disclaimer.tsx
+
+lib/
+  config.ts
+  validation.ts
+  seo.ts
+  structured-data.ts
+
+public/
+  images/
+
+Keep reusable functionality separate from individual page content.
+
+Do not put the entire website into one enormous component.
+
+---
+
+# 18. DEVELOPMENT WORKFLOW
+
+Build the application in a structured sequence.
+
+Phase 1:
+Set up Next.js App Router, TypeScript, Tailwind CSS, and global design system.
+
+Phase 2:
+Build the complete responsive homepage.
+
+Phase 3:
+Implement registration validation, confirmation, copy functionality, and official MIB navigation.
+
+Phase 4:
+Create all supporting SEO pages.
+
+Phase 5:
+Create FAQ, About, Contact, Privacy Policy, and Disclaimer pages.
+
+Phase 6:
+Implement metadata, canonical URLs, sitemap, robots.txt, and structured data.
+
+Phase 7:
+Perform responsive, accessibility, and functional testing.
+
+Phase 8:
+Run production build and fix errors.
+
+IMPORTANT:
+
+Do not stop after the first homepage.
+
+Do not leave buttons without functionality.
+
+Do not leave broken links.
+
+Do not use placeholder insurance results.
+
+Do not create empty SEO pages.
+
+Complete the full project.
+
+---
+
+# 19. FINAL QUALITY CHECK
+
+Before completing development, verify:
+
+1. Homepage renders correctly.
+2. Registration input accepts appropriate UK formats.
+3. Invalid inputs display helpful errors.
+4. Copy button works.
+5. Clear button works.
+6. Confirmation panel displays the correct entered registration.
+7. Official MIB link works.
+8. No fake insurance results exist.
+9. All navigation links work.
+10. All SEO pages render.
+11. Metadata is unique.
+12. Sitemap is valid.
+13. Robots configuration is correct.
+14. Canonical URLs are correct.
+15. FAQ accordion works.
+16. Mobile menu works.
+17. No horizontal overflow.
+18. Keyboard accessibility is maintained.
+19. No TypeScript errors.
+20. Production build succeeds.
+
+Run the available checks:
+
+npm run lint
+npm run build
+
+Fix errors before reporting completion.
+
+---
+
+# 20. FINAL PROJECT OBJECTIVE
+
+Deliver a complete, professional, mobile-first UK Vehicle Insurance Checker website.
+
+The homepage must primarily target:
+
+"Check If Car Is Insured"
+
+Additional SEO pages must target:
+
+- First Alternative Car Insurance.
+- Classic Car Insurance.
+
+The website must offer a genuinely useful registration-based workflow while directing users to the official MIB service for their real insurance status.
+
+Prioritise:
+
+1. Accurate functionality.
+2. Professional UI/UX.
+3. UK SEO.
+4. Helpful original content.
+5. Technical performance.
+6. Trust and transparency.
+7. Free and maintainable architecture.
+
+Build the actual application, verify all functionality, and ensure it is ready for deployment on an eligible Vercel free plan.

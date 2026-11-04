@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary-navy: #16324f;
+    --dark-navy: #102a43;
+    --accent-yellow: #f5d547;
+    --bg-light: #f6f8fa;
+    --text-primary: #172b3a;
+    --text-secondary: #65758b;
+    --border-color: #e4eaf0;
+  }
+
+  body {
+    background-color: #f6f8fa;
+    color: #172b3a;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* UK Number Plate Font Styling */
+.uk-number-plate {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, monospace;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}

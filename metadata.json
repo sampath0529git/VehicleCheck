@@ -1,0 +1,8 @@
+{
+  "name": "VehicleCheck",
+  "description": "Check if your car is insured in the UK. Enter your vehicle registration and continue to the official MIB vehicle insurance checker for free.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
