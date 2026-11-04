@@ -4,13 +4,15 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import VehicleChecker from '@/components/VehicleChecker';
 import { constructMetadata } from '@/lib/seo';
-import { CheckCircle, Shield, Award, Clock, DollarSign, Wrench } from 'lucide-react';
+import { ListFilter, ChevronRight } from 'lucide-react';
 
 export const metadata: Metadata = constructMetadata({
   title: 'Classic Car Insurance UK – Complete Guide',
   description:
     'Comprehensive UK guide to classic car insurance. Understand agreed valuation, limited mileage policies, qualifying vehicle age, and checking status on the MIB database.',
   path: '/classic-car-insurance/',
+  ogImage: '/images/classic-car.jpg',
+  ogTag: 'Classic & Historic Vehicles',
   keywords: [
     'Classic Car Insurance',
     'classic car insurance uk',
@@ -22,6 +24,15 @@ export const metadata: Metadata = constructMetadata({
 });
 
 export default function ClassicCarInsurancePage() {
+  const tocItems = [
+    { id: 'what-is-classic-insurance', label: '1. What Is Classic Car Insurance?' },
+    { id: 'qualifying-vehicles', label: '2. Qualifying Vehicle Criteria & Ages' },
+    { id: 'classic-vs-standard', label: '3. Classic vs Standard Car Insurance' },
+    { id: 'agreed-value', label: '4. Agreed Value vs Market Value' },
+    { id: 'storage-security', label: '5. Storage, Security & Mileage Limits' },
+    { id: 'check-classic-insurance', label: '6. Checking Classic Car Insurance on MIB' },
+  ];
+
   return (
     <div className="bg-[#F6F8FA] min-h-screen pb-16">
       <Breadcrumbs items={[{ name: 'Classic Car Insurance', url: '/classic-car-insurance/' }]} />
@@ -46,12 +57,12 @@ export default function ClassicCarInsurancePage() {
             <span aria-hidden="true">·</span>
             <span>UK Automotive Specialist Guide</span>
             <span aria-hidden="true">·</span>
-            <span>Target: Classic & Historic Vehicles</span>
+            <span>Target: Classic &amp; Historic Vehicles</span>
           </div>
         </div>
 
         {/* Hero Visual & Registration Checker */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
           <div className="lg:col-span-7 bg-white border border-[#E4EAF0] rounded-2xl overflow-hidden shadow-xs">
             <div className="relative h-64 sm:h-80 w-full">
               <Image
@@ -77,10 +88,30 @@ export default function ClassicCarInsurancePage() {
           </div>
         </div>
 
+        {/* Table of Contents for SEO & CTR */}
+        <nav aria-label="Table of Contents" className="bg-white border border-[#E4EAF0] rounded-2xl p-6 shadow-xs mb-8">
+          <div className="flex items-center gap-2 text-sm font-bold text-[#102A43] mb-3">
+            <ListFilter className="w-4 h-4 text-[#16324F]" />
+            <span>Table of Contents</span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+            {tocItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className="flex items-center gap-1.5 text-slate-600 hover:text-[#16324F] hover:underline py-1 transition-colors"
+              >
+                <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                <span>{item.label}</span>
+              </a>
+            ))}
+          </div>
+        </nav>
+
         {/* Detailed Content Body */}
         <div className="bg-white border border-[#E4EAF0] rounded-2xl p-6 sm:p-10 shadow-xs space-y-12 text-slate-700 leading-relaxed">
-          {/* Section 1 & 2 */}
-          <section className="space-y-4">
+          {/* Section 1 */}
+          <section id="what-is-classic-insurance" className="space-y-4 scroll-mt-24">
             <h2 className="text-2xl font-bold text-[#102A43]">
               1. What Is Classic Car Insurance and How Does It Work?
             </h2>
@@ -92,8 +123,8 @@ export default function ClassicCarInsurancePage() {
             </p>
           </section>
 
-          {/* Section 3: Qualification */}
-          <section className="space-y-4">
+          {/* Section 2: Qualification */}
+          <section id="qualifying-vehicles" className="space-y-4 scroll-mt-24">
             <h2 className="text-2xl font-bold text-[#102A43]">
               2. What Vehicles Qualify as Classic Cars in the UK?
             </h2>
@@ -122,8 +153,8 @@ export default function ClassicCarInsurancePage() {
             </div>
           </section>
 
-          {/* Section 4: Classic vs Standard Comparison */}
-          <section className="space-y-4">
+          {/* Section 3: Classic vs Standard Comparison */}
+          <section id="classic-vs-standard" className="space-y-4 scroll-mt-24">
             <h2 className="text-2xl font-bold text-[#102A43]">
               3. Classic Car Insurance vs Standard Car Insurance
             </h2>
@@ -150,7 +181,7 @@ export default function ClassicCarInsurancePage() {
                   <tr>
                     <td className="p-3 font-semibold text-slate-900 border border-slate-200">Vehicle Usage</td>
                     <td className="p-3 border border-slate-200">Daily commuting, shopping, school runs</td>
-                    <td className="p-3 border border-slate-200">Social, domestic, pleasure & car club events</td>
+                    <td className="p-3 border border-slate-200">Social, domestic, pleasure &amp; car club events</td>
                   </tr>
                   <tr>
                     <td className="p-3 font-semibold text-slate-900 border border-slate-200">Salvage Retention</td>
@@ -167,8 +198,8 @@ export default function ClassicCarInsurancePage() {
             </div>
           </section>
 
-          {/* Section 5: Agreed Value vs Market Value */}
-          <section className="space-y-4">
+          {/* Section 4: Agreed Value vs Market Value */}
+          <section id="agreed-value" className="space-y-4 scroll-mt-24">
             <h2 className="text-2xl font-bold text-[#102A43]">
               4. Agreed Value vs Market Value: Why It Matters
             </h2>
@@ -180,17 +211,17 @@ export default function ClassicCarInsurancePage() {
             </p>
           </section>
 
-          {/* Section 6: Limited Mileage & Storage */}
-          <section className="space-y-4">
+          {/* Section 5: Limited Mileage & Storage */}
+          <section id="storage-security" className="space-y-4 scroll-mt-24">
             <h2 className="text-2xl font-bold text-[#102A43]">
-              5. Storage, Security & Mileage Parameters
+              5. Storage, Security &amp; Mileage Parameters
             </h2>
             <p className="text-base text-slate-600 leading-relaxed">
               To benefit from reduced classic premiums, policyholders must satisfy strict risk mitigation rules:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-[#F6F8FA] border border-[#E4EAF0] rounded-xl p-5">
-                <h3 className="font-bold text-[#102A43] mb-2">Garaging & Security Requirements</h3>
+                <h3 className="font-bold text-[#102A43] mb-2">Garaging &amp; Security Requirements</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   Most classic underwriters require the vehicle to be parked inside a locked brick, stone, or substantial concrete garage between 10:00 PM and 6:00 AM when at the home address. Thatcham-approved immobilisers or satellite trackers may be mandatory for high-value vehicles.
                 </p>
@@ -204,8 +235,8 @@ export default function ClassicCarInsurancePage() {
             </div>
           </section>
 
-          {/* Section 7: Checking Classic Car on MIB */}
-          <section className="space-y-4">
+          {/* Section 6: Checking Classic Car on MIB */}
+          <section id="check-classic-insurance" className="space-y-4 scroll-mt-24">
             <h2 className="text-2xl font-bold text-[#102A43]">
               6. Checking If a Classic Car Is Insured on the MID
             </h2>

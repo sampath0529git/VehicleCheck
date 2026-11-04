@@ -1,16 +1,17 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import VehicleChecker from '@/components/VehicleChecker';
 import DvlaMibComparison from '@/components/DvlaMibComparison';
 import { constructMetadata } from '@/lib/seo';
-import { CheckCircle2, ShieldCheck, ArrowRight } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = constructMetadata({
   title: 'Is My Car Insured? Free UK Check & DVLA Guidance',
   description:
     'Find out if your car is insured for free in the UK. Understand how the Motor Insurance Database (MID) works, why DVLA cross-checks policies, and how to verify your status.',
   path: '/is-my-car-insured/',
+  ogImage: '/images/continuous-insurance.jpg',
+  ogTag: 'Continuous Insurance Enforcement',
   keywords: [
     'is my car insured check free dvla',
     'is my car insured',
@@ -36,6 +37,17 @@ export default function IsMyCarInsuredPage() {
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
             Thousands of UK drivers search each month for &quot;is my car insured check free dvla&quot;.
             Here is everything you need to know about checking your vehicle&apos;s live status on the central database.
+          </p>
+        </div>
+
+        {/* Featured Snippet Target Box */}
+        <div className="bg-blue-50/80 border-2 border-[#16324F]/20 rounded-2xl p-6 mb-8 shadow-xs">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#16324F] mb-2">
+            <CheckCircle2 className="w-4 h-4 text-[#16324F]" />
+            <span>Quick Answer: Can You Check Insurance Free with DVLA?</span>
+          </div>
+          <p className="text-sm sm:text-base font-medium text-slate-800 leading-relaxed">
+            No, the <strong>DVLA does not provide a public car insurance checker</strong>. While the DVLA checks insurance behind the scenes with automated systems, the official free public insurance checking tool is hosted exclusively by the <strong>Motor Insurers&apos; Bureau (MIB)</strong> on the Motor Insurance Database (MID).
           </p>
         </div>
 

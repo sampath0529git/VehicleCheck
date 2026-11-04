@@ -17,6 +17,22 @@ export function getWebSiteJsonLd() {
   };
 }
 
+export function getOrganizationJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: `${SITE_URL}/images/hero-uk-vehicle.jpg`,
+    description:
+      'Independent UK motor information service assisting drivers with registration validation and MIB insurance verification guidance.',
+    areaServed: {
+      '@type': 'Country',
+      name: 'United Kingdom',
+    },
+  };
+}
+
 export function getWebApplicationJsonLd() {
   return {
     '@context': 'https://schema.org',
@@ -65,5 +81,46 @@ export function getFaqPageJsonLd(faqs: { question: string; answer: string }[]) {
         text: faq.answer,
       },
     })),
+  };
+}
+
+export function getHowToJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Check If a Car Is Insured in the UK',
+    description:
+      'Step-by-step instructions on checking whether a UK vehicle is insured using your registration number and the official Motor Insurers Bureau (MIB) database.',
+    totalTime: 'PT2M',
+    step: [
+      {
+        '@type': 'HowToStep',
+        position: 1,
+        name: 'Format and Prepare Your Registration Number',
+        text: 'Locate your vehicle registration number plate and check character syntax without mistaking letters like O for zero.',
+        url: `${SITE_URL}/how-to-check-if-a-car-is-insured/#step-1`,
+      },
+      {
+        '@type': 'HowToStep',
+        position: 2,
+        name: 'Navigate to the Official Motor Insurers’ Bureau Checker',
+        text: 'Access the official MIB public vehicle enquiry portal at mib.org.uk.',
+        url: `${SITE_URL}/how-to-check-if-a-car-is-insured/#step-2`,
+      },
+      {
+        '@type': 'HowToStep',
+        position: 3,
+        name: 'Confirm Your Legal Right to Check the Vehicle',
+        text: 'Confirm that you are the registered keeper or have legal permission to drive the vehicle.',
+        url: `${SITE_URL}/how-to-check-if-a-car-is-insured/#step-3`,
+      },
+      {
+        '@type': 'HowToStep',
+        position: 4,
+        name: 'Review Your Insurance Record Result',
+        text: 'View whether an active motor insurance policy is registered to that vehicle on the central Motor Insurance Database.',
+        url: `${SITE_URL}/how-to-check-if-a-car-is-insured/#step-4`,
+      },
+    ],
   };
 }

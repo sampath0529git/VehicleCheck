@@ -1,16 +1,18 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import VehicleChecker from '@/components/VehicleChecker';
 import { constructMetadata } from '@/lib/seo';
-import { ExternalLink, CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
+import { ExternalLink, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { OFFICIAL_MIB_CHECK_URL } from '@/lib/config';
+import { getHowToJsonLd } from '@/lib/structured-data';
 
 export const metadata: Metadata = constructMetadata({
   title: 'How to Check If a Car Is Insured in the UK – Step-by-Step Guide',
   description:
     'Learn how to check if a car is insured in the UK using the official MIB vehicle checker. Step-by-step instructions, legal requirements, and database sync times.',
   path: '/how-to-check-if-a-car-is-insured/',
+  ogImage: '/images/how-to-check.jpg',
+  ogTag: 'Step-by-Step Guide',
   keywords: [
     'how to check if a car is insured',
     'check if a car is insured UK',
@@ -21,8 +23,14 @@ export const metadata: Metadata = constructMetadata({
 });
 
 export default function HowToCheckPage() {
+  const howToSchema = getHowToJsonLd();
+
   return (
     <div className="bg-[#F6F8FA] min-h-screen pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
       <Breadcrumbs items={[{ name: 'How to Check If a Car Is Insured', url: '/how-to-check-if-a-car-is-insured/' }]} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-12">
@@ -39,6 +47,17 @@ export default function HowToCheckPage() {
           </p>
         </div>
 
+        {/* Featured Snippet Quick Answer Box */}
+        <div className="bg-blue-50/80 border-2 border-[#16324F]/20 rounded-2xl p-6 mb-8 shadow-xs">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#16324F] mb-2">
+            <CheckCircle2 className="w-4 h-4 text-[#16324F]" />
+            <span>Quick Answer (Summary)</span>
+          </div>
+          <p className="text-sm sm:text-base font-medium text-slate-800 leading-relaxed">
+            To check if a car is insured in the UK for free, enter your vehicle registration number on the official <strong>Motor Insurers&apos; Bureau (MIB)</strong> portal at <em>mib.org.uk</em>. Confirm you own or have permission to drive the vehicle to view its live status on the Motor Insurance Database (MID) instantly.
+          </p>
+        </div>
+
         <div className="mb-12">
           <VehicleChecker />
         </div>
@@ -49,7 +68,7 @@ export default function HowToCheckPage() {
               The Official 4-Step Process on the MIB Service
             </h2>
             <div className="space-y-6 pt-2">
-              <div className="flex gap-4">
+              <div id="step-1" className="flex gap-4 scroll-mt-24">
                 <span className="w-8 h-8 rounded-full bg-[#16324F] text-[#F5D547] font-bold text-sm flex items-center justify-center shrink-0">1</span>
                 <div>
                   <h3 className="font-bold text-[#102A43] text-lg">Format and Prepare Your Registration Number</h3>
@@ -59,7 +78,7 @@ export default function HowToCheckPage() {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div id="step-2" className="flex gap-4 scroll-mt-24">
                 <span className="w-8 h-8 rounded-full bg-[#16324F] text-[#F5D547] font-bold text-sm flex items-center justify-center shrink-0">2</span>
                 <div>
                   <h3 className="font-bold text-[#102A43] text-lg">Navigate to the Official Motor Insurers&apos; Bureau Checker</h3>
@@ -72,7 +91,7 @@ export default function HowToCheckPage() {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div id="step-3" className="flex gap-4 scroll-mt-24">
                 <span className="w-8 h-8 rounded-full bg-[#16324F] text-[#F5D547] font-bold text-sm flex items-center justify-center shrink-0">3</span>
                 <div>
                   <h3 className="font-bold text-[#102A43] text-lg">Confirm Your Legal Right to Check the Vehicle</h3>
@@ -82,7 +101,7 @@ export default function HowToCheckPage() {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div id="step-4" className="flex gap-4 scroll-mt-24">
                 <span className="w-8 h-8 rounded-full bg-[#16324F] text-[#F5D547] font-bold text-sm flex items-center justify-center shrink-0">4</span>
                 <div>
                   <h3 className="font-bold text-[#102A43] text-lg">Review Your Insurance Record Result</h3>

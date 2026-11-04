@@ -9,6 +9,7 @@ export const metadata: Metadata = constructMetadata({
   description:
     'Important legal notice and independent service disclaimer for VehicleCheck. Clarifying our relationship with the MIB, DVLA, and UK motor insurance providers.',
   path: '/disclaimer/',
+  ogTag: 'Independent Service Disclaimer',
 });
 
 export default function DisclaimerPage() {

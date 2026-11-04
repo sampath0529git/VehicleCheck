@@ -8,6 +8,8 @@ interface SeoProps {
   publishedTime?: string;
   modifiedTime?: string;
   keywords?: string[];
+  ogImage?: string;
+  ogTag?: string;
 }
 
 export function constructMetadata({
@@ -15,9 +17,18 @@ export function constructMetadata({
   description,
   path,
   keywords,
+  ogImage,
+  ogTag,
 }: SeoProps): Metadata {
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   const canonicalUrl = `${SITE_URL}${cleanPath}`;
+
+  // If a custom image isn't provided, use the dynamic 1200x630 branded OG card generator
+  const imageUrl =
+    ogImage ||
+    `${SITE_URL}/api/og?title=${encodeURIComponent(title)}&desc=${encodeURIComponent(
+      description
+    )}&tag=${encodeURIComponent(ogTag || 'UK Vehicle Guide')}`;
 
   return {
     title,
@@ -30,6 +41,9 @@ export function constructMetadata({
       'car insurance check UK',
       'MIB vehicle insurance checker',
     ],
+    authors: [{ name: SITE_NAME, url: SITE_URL }],
+    creator: SITE_NAME,
+    publisher: SITE_NAME,
     metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: canonicalUrl,
@@ -43,7 +57,7 @@ export function constructMetadata({
       type: 'website',
       images: [
         {
-          url: `${SITE_URL}/images/hero-uk-vehicle.jpg`,
+          url: imageUrl,
           width: 1200,
           height: 630,
           alt: `${title} - ${SITE_NAME}`,
@@ -54,11 +68,12 @@ export function constructMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: [`${SITE_URL}/images/hero-uk-vehicle.jpg`],
+      images: [imageUrl],
     },
     robots: {
       index: true,
       follow: true,
+      nocache: false,
       googleBot: {
         index: true,
         follow: true,
@@ -66,6 +81,12 @@ export function constructMetadata({
         'max-image-preview': 'large',
         'max-snippet': -1,
       },
+    },
+    other: {
+      'geo.region': 'GB',
+      'geo.placename': 'United Kingdom',
+      'content-language': 'en-GB',
+      'publisher': SITE_NAME,
     },
   };
 }

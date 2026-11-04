@@ -4,14 +4,16 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import VehicleChecker from '@/components/VehicleChecker';
 import { constructMetadata } from '@/lib/seo';
-import { ExternalLink, ShieldCheck, FileText, Phone, HelpCircle, CheckCircle } from 'lucide-react';
-import { OFFICIAL_FIRST_ALTERNATIVE_URL, OFFICIAL_MIB_CHECK_URL } from '@/lib/config';
+import { ExternalLink, CheckCircle, ListFilter, ChevronRight } from 'lucide-react';
+import { OFFICIAL_FIRST_ALTERNATIVE_URL } from '@/lib/config';
 
 export const metadata: Metadata = constructMetadata({
   title: 'First Alternative Car Insurance UK – Policy Guide',
   description:
     'Comprehensive UK guide to First Alternative car insurance. Explore policy features, underwriting details, claims, and how to verify your status on the MIB database.',
   path: '/first-alternative-car-insurance/',
+  ogImage: '/images/first-alternative.jpg',
+  ogTag: 'First Alternative Policy Guide',
   keywords: [
     'First Alternative Car Insurance',
     'first alternative car insurance uk',
@@ -22,6 +24,16 @@ export const metadata: Metadata = constructMetadata({
 });
 
 export default function FirstAlternativePage() {
+  const tocItems = [
+    { id: 'introduction', label: '1. Introduction to First Alternative' },
+    { id: 'underwriting', label: '2. Who Provides First Alternative Cover?' },
+    { id: 'cover-types', label: '3. Policy Types & Cover Options' },
+    { id: 'comprehensive-features', label: '4. Standard Comprehensive Features' },
+    { id: 'optional-addons', label: '5. Optional Additional Cover' },
+    { id: 'contact-portal', label: '6. Policy Documents & Contact Details' },
+    { id: 'mib-check', label: '7. How to Verify Policy on MIB' },
+  ];
+
   return (
     <div className="bg-[#F6F8FA] min-h-screen pb-16">
       <Breadcrumbs items={[{ name: 'First Alternative Car Insurance', url: '/first-alternative-car-insurance/' }]} />
@@ -50,7 +62,7 @@ export default function FirstAlternativePage() {
         </div>
 
         {/* Feature Image & Checker Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-8">
           <div className="lg:col-span-7 bg-white border border-[#E4EAF0] rounded-2xl overflow-hidden shadow-xs">
             <div className="relative h-64 sm:h-80 w-full">
               <Image
@@ -76,10 +88,30 @@ export default function FirstAlternativePage() {
           </div>
         </div>
 
+        {/* Table of Contents */}
+        <nav aria-label="Table of Contents" className="bg-white border border-[#E4EAF0] rounded-2xl p-6 shadow-xs mb-8">
+          <div className="flex items-center gap-2 text-sm font-bold text-[#102A43] mb-3">
+            <ListFilter className="w-4 h-4 text-[#16324F]" />
+            <span>Table of Contents</span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+            {tocItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className="flex items-center gap-1.5 text-slate-600 hover:text-[#16324F] hover:underline py-1 transition-colors"
+              >
+                <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                <span>{item.label}</span>
+              </a>
+            ))}
+          </div>
+        </nav>
+
         {/* In-Depth Editorial Guide */}
         <div className="bg-white border border-[#E4EAF0] rounded-2xl p-6 sm:p-10 shadow-xs space-y-10 text-slate-700 leading-relaxed">
-          {/* Section 1 & 2 */}
-          <section className="space-y-4">
+          {/* Section 1 */}
+          <section id="introduction" className="space-y-4 scroll-mt-24">
             <h2 className="text-2xl font-bold text-[#102A43]">
               1. Introduction to First Alternative
             </h2>
@@ -88,7 +120,8 @@ export default function FirstAlternativePage() {
             </p>
           </section>
 
-          <section className="space-y-4">
+          {/* Section 2 */}
+          <section id="underwriting" className="space-y-4 scroll-mt-24">
             <h2 className="text-2xl font-bold text-[#102A43]">
               2. Who Provides First Alternative Car Insurance?
             </h2>
@@ -108,10 +141,10 @@ export default function FirstAlternativePage() {
             </p>
           </section>
 
-          {/* Section 3 & 4 */}
-          <section className="space-y-4">
+          {/* Section 3 */}
+          <section id="cover-types" className="space-y-4 scroll-mt-24">
             <h2 className="text-2xl font-bold text-[#102A43]">
-              3. Policy Types & Cover Options
+              3. Policy Types &amp; Cover Options
             </h2>
             <p className="text-base text-slate-600 leading-relaxed">
               First Alternative typically focuses on Comprehensive car insurance policies, which provide the broadest level of financial protection on UK roads. Depending on availability, they may also offer Third Party, Fire and Theft (TPFT):
@@ -124,7 +157,7 @@ export default function FirstAlternativePage() {
                 </p>
               </div>
               <div className="border border-slate-200 rounded-xl p-4 bg-slate-50/50">
-                <h3 className="font-bold text-[#102A43] mb-1">Third Party, Fire & Theft</h3>
+                <h3 className="font-bold text-[#102A43] mb-1">Third Party, Fire &amp; Theft</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   Covers injuries and damages caused to third parties, plus theft of your vehicle or damage resulting directly from fire.
                 </p>
@@ -132,8 +165,8 @@ export default function FirstAlternativePage() {
             </div>
           </section>
 
-          {/* Section 5: Standard Features */}
-          <section className="space-y-4">
+          {/* Section 4 */}
+          <section id="comprehensive-features" className="space-y-4 scroll-mt-24">
             <h2 className="text-2xl font-bold text-[#102A43]">
               4. Standard Features of Comprehensive Policies
             </h2>
@@ -168,8 +201,8 @@ export default function FirstAlternativePage() {
             </ul>
           </section>
 
-          {/* Section 6: Optional Add-ons */}
-          <section className="space-y-4">
+          {/* Section 5 */}
+          <section id="optional-addons" className="space-y-4 scroll-mt-24">
             <h2 className="text-2xl font-bold text-[#102A43]">
               5. Optional Additional Cover
             </h2>
@@ -178,16 +211,16 @@ export default function FirstAlternativePage() {
             </p>
             <div className="space-y-2 text-sm">
               <p><strong>Motor Legal Protection:</strong> Up to £100,000 legal expense cover to recover uninsured losses (such as policy excess, hire car fees, or injury compensation) after a non-fault accident.</p>
-              <p><strong>UK & European Breakdown Assistance:</strong> Roadside recovery, at-home assistance, and vehicle repatriation services provided in partnership with specialist breakdown providers.</p>
+              <p><strong>UK &amp; European Breakdown Assistance:</strong> Roadside recovery, at-home assistance, and vehicle repatriation services provided in partnership with specialist breakdown providers.</p>
               <p><strong>Key Cover:</strong> Financial support for replacement vehicle keys and locksmith expenses in the event of theft, loss, or damage.</p>
               <p><strong>Excess Protection:</strong> Reimbursement of your compulsory or voluntary policy excess in eligible fault or non-fault claims.</p>
             </div>
           </section>
 
-          {/* Section 7 & 8: Contact & Official links */}
-          <section className="space-y-4">
+          {/* Section 6 */}
+          <section id="contact-portal" className="space-y-4 scroll-mt-24">
             <h2 className="text-2xl font-bold text-[#102A43]">
-              6. Policy Documents & Contact Details
+              6. Policy Documents &amp; Contact Details
             </h2>
             <p className="text-base text-slate-600 leading-relaxed">
               Customers can manage their policies directly through the official First Alternative Customer Portal. To change vehicle details, download a Certificate of Motor Insurance, or notify a claim:
@@ -199,8 +232,8 @@ export default function FirstAlternativePage() {
             </div>
           </section>
 
-          {/* Section 9: How to verify First Alternative on MIB */}
-          <section className="space-y-4">
+          {/* Section 7 */}
+          <section id="mib-check" className="space-y-4 scroll-mt-24">
             <h2 className="text-2xl font-bold text-[#102A43]">
               7. How to Verify a First Alternative Policy on the MIB
             </h2>
@@ -217,7 +250,7 @@ export default function FirstAlternativePage() {
 
           {/* Third-Party Disclaimer */}
           <div className="p-5 rounded-xl bg-amber-50/70 border border-amber-200 text-xs text-amber-950 leading-relaxed">
-            <p className="font-bold mb-1">Third-Party Brand & Editorial Disclaimer:</p>
+            <p className="font-bold mb-1">Third-Party Brand &amp; Editorial Disclaimer:</p>
             <p>
               VehicleCheck is an independent educational website. We are not First Alternative, Europa Group Limited, Southern Rock Insurance Company Limited, or the Motor Insurers&apos; Bureau (MIB). All product names, trademarks, and registered trademarks are property of their respective owners. Information presented here is for general guidance and research purposes only. For formal quotations, policy wording, and legal terms, visit the official First Alternative website.
             </p>

@@ -10,6 +10,7 @@ export const metadata: Metadata = constructMetadata({
   description:
     'Learn about VehicleCheck, an independent informational resource dedicated to helping British motorists understand UK insurance checking procedures and legal requirements.',
   path: '/about-us/',
+  ogTag: 'About VehicleCheck',
 });
 
 export default function AboutUsPage() {
