@@ -8,6 +8,7 @@ export const metadata: Metadata = constructMetadata({
   description:
     'Our transparent privacy policy. Understand how VehicleCheck processes vehicle registrations client-side without storing or transmitting your data.',
   path: '/privacy-policy/',
+  ogImage: '/images/hero-uk-vehicle.jpg',
   ogTag: 'Privacy & UK GDPR',
 });
 

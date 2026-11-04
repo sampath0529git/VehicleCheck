@@ -11,6 +11,7 @@ export const metadata: Metadata = constructMetadata({
   description:
     'Frequently asked questions about checking car insurance in the UK. Understand MIB database checks, Continuous Insurance Enforcement, SORN, and policy verification.',
   path: '/faq/',
+  ogImage: '/images/how-to-check.jpg',
   ogTag: 'UK Insurance Knowledge Base',
   keywords: [
     'uk car insurance faq',

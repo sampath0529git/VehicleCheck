@@ -4,9 +4,24 @@
 export const SITE_NAME = 'VehicleCheck';
 export const SITE_TAGLINE = 'UK Vehicle Insurance Checking Guide';
 
-// Configurable domain (env var override supported, never hardcoded unconfirmed)
-export const SITE_DOMAIN = process.env.NEXT_PUBLIC_SITE_DOMAIN || 'carinsurancecheck.co.uk';
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || `https://${SITE_DOMAIN}`;
+// Prioritize actual runtime hosting URL (APP_URL injected by environment)
+// or user-provided NEXT_PUBLIC_SITE_URL, falling back to carinsurancecheck.co.uk
+const rawUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  process.env.APP_URL ||
+  (process.env.NEXT_PUBLIC_SITE_DOMAIN
+    ? `https://${process.env.NEXT_PUBLIC_SITE_DOMAIN}`
+    : 'https://carinsurancecheck.co.uk');
+
+export const SITE_URL = rawUrl.replace(/\/+$/, '');
+
+export const SITE_DOMAIN = (() => {
+  try {
+    return new URL(SITE_URL).hostname;
+  } catch {
+    return 'carinsurancecheck.co.uk';
+  }
+})();
 
 // Official Destination URLs
 export const OFFICIAL_MIB_CHECK_URL =

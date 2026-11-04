@@ -23,12 +23,25 @@ export function constructMetadata({
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   const canonicalUrl = `${SITE_URL}${cleanPath}`;
 
-  // If a custom image isn't provided, use the dynamic 1200x630 branded OG card generator
-  const imageUrl =
-    ogImage ||
-    `${SITE_URL}/api/og?title=${encodeURIComponent(title)}&desc=${encodeURIComponent(
-      description
-    )}&tag=${encodeURIComponent(ogTag || 'UK Vehicle Guide')}`;
+  // Ensure image URL is an absolute, publicly reachable URL
+  let fullImageUrl: string;
+  if (ogImage) {
+    if (ogImage.startsWith('http://') || ogImage.startsWith('https://')) {
+      fullImageUrl = ogImage;
+    } else {
+      const cleanImgPath = ogImage.startsWith('/') ? ogImage : `/${ogImage}`;
+      fullImageUrl = `${SITE_URL}${cleanImgPath}`;
+    }
+  } else {
+    fullImageUrl = `${SITE_URL}/api/og?title=${encodeURIComponent(
+      title
+    )}&desc=${encodeURIComponent(description)}&tag=${encodeURIComponent(
+      ogTag || 'UK Vehicle Guide'
+    )}`;
+  }
+
+  const isPng = fullImageUrl.endsWith('.png') || fullImageUrl.includes('/api/og');
+  const imageMimeType = isPng ? 'image/png' : 'image/jpeg';
 
   return {
     title,
@@ -57,10 +70,12 @@ export function constructMetadata({
       type: 'website',
       images: [
         {
-          url: imageUrl,
+          url: fullImageUrl,
+          secureUrl: fullImageUrl,
           width: 1200,
           height: 630,
           alt: `${title} - ${SITE_NAME}`,
+          type: imageMimeType,
         },
       ],
     },
@@ -68,7 +83,7 @@ export function constructMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: [imageUrl],
+      images: [fullImageUrl],
     },
     robots: {
       index: true,

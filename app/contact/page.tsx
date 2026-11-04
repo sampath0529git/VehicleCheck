@@ -10,6 +10,7 @@ export const metadata: Metadata = constructMetadata({
   description:
     'Get in touch with the VehicleCheck team for website feedback, editorial corrections, or general inquiries regarding our UK vehicle insurance checking guides.',
   path: '/contact/',
+  ogImage: '/images/hero-uk-vehicle.jpg',
   ogTag: 'Contact & Feedback',
 });
 

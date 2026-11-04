@@ -58,8 +58,10 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${SITE_URL}/images/hero-uk-vehicle.jpg`,
+        secureUrl: `${SITE_URL}/images/hero-uk-vehicle.jpg`,
         width: 1200,
         height: 630,
+        type: 'image/jpeg',
         alt: `${SITE_NAME} - UK Vehicle Insurance Checker`,
       },
     ],
@@ -146,6 +148,9 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="publisher" content={SITE_NAME} />
+        <link rel="publisher" href={SITE_URL} />
         <script
           dangerouslySetInnerHTML={{
             __html: extensionFetchPolyfill,

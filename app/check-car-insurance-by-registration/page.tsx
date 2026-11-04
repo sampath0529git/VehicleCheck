@@ -10,6 +10,7 @@ export const metadata: Metadata = constructMetadata({
   description:
     'Check UK car insurance by registration number. Understand number plate formats, personalized plates, and how to verify insurance records via the official MIB database.',
   path: '/check-car-insurance-by-registration/',
+  ogImage: '/images/hero-uk-vehicle.jpg',
   ogTag: 'Number Plate Checker',
   keywords: [
     'check car insurance by registration',
